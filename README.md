@@ -84,11 +84,11 @@ python -m tm_custseg viz-importance --db data\fcc_tm.sqlite --k 4 --out-png data
 
 ## Outputs
 
-customer_segments: (customer_id, method='kmeans', k, segment, distance, created_ts_utc)
+- customer_segments: (customer_id, method='kmeans', k, segment, distance, created_ts_utc)
 
-segment_centers: cluster centers per segment in original feature space (JSON)
+- segment_centers: cluster centers per segment in original feature space (JSON)
 
-Optional CSV exports (features/segments)
+- Optional CSV exports (features/segments)
 
 ---
 
