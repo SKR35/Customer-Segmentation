@@ -20,7 +20,9 @@ pip install -e .
 
 1) Extract features
 
+~~~bat
 python -m tm_custseg extract-features --db data\fcc_tm.sqlite --out-csv data\customer_features.csv
+~~~
 
 2) Pick k + then segment with the suggested k
 
