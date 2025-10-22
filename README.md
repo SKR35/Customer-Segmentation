@@ -12,7 +12,7 @@ conda create -n tmcseg python=3.11 -y
 conda activate tmcseg
 python --version
 
-pip install -e .```
+pip install -e .
 
 ---
 
@@ -81,7 +81,6 @@ pip install -e .
 python -m tm_custseg extract-features --db data\fcc_tm.sqlite --out-csv data\customer_features.csv
 python -m tm_custseg segment --db data\fcc_tm.sqlite --k 4 --overwrite --min-tx 1
 python -m tm_custseg suggest-k --db data\fcc_tm.sqlite --method kmeans --k 4 --kmin 2 --kmax 10 --out-csv data\k_sweep_active.csv
-
 python -m tm_custseg profile --db data\fcc_tm.sqlite --k 4
 python -m tm_custseg export --db data\fcc_tm.sqlite --k 4 --out-csv data\segments_k4.csv
 python -m tm_custseg pca-2d --db data\fcc_tm.sqlite --k 4 --out-csv data\pca2d_k4.csv
