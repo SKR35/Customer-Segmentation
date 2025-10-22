@@ -26,31 +26,51 @@ python -m tm_custseg extract-features --db data\fcc_tm.sqlite --out-csv data\cus
 
 2) Pick k + then segment with the suggested k
 
+~~~bat
 python -m tm_custseg suggest-k --db data\fcc_tm.sqlite --method kmeans --k 4 --kmin 2 --kmax 10 --out-csv data\k_sweep_active.csv
+~~~
 
 3) Run segmentation
 
+~~~bat
 python -m tm_custseg segment --db data\fcc_tm.sqlite --k 4 --overwrite --min-tx 1
+~~~
 
 4) Inspect profiles
 
+~~~bat
 python -m tm_custseg profile --db data\fcc_tm.sqlite --k 4
+~~~
 
 5) Export segments + features (CSV)
 
+~~~bat
 python -m tm_custseg export --db data\fcc_tm.sqlite --k 4 --out-csv data\segments_k4.csv
+~~~
 
 6) PCA scatter CSV
+
+~~~bat
 python -m tm_custseg pca-2d --db data\fcc_tm.sqlite --k 4 --out-csv data\pca2d_k4.csv
+~~~
 
 7) Tiny HTML report
+
+~~~bat
 python -m tm_custseg report --db data\fcc_tm.sqlite --k 4 --out-html data\seg_report_k4.html --pca-csv data\pca2d_k4.csv
+~~~
 
 8) Explain clusters with RF + permutation importance
+
+~~~bat
 python -m tm_custseg explain --db data\fcc_tm.sqlite --k 4 --out-csv data\importance_k4_cv5.csv --mode pi_cv --cv 5
+~~~
 
 9) Viz importance
+
+~~~bat
 python -m tm_custseg viz-importance --db data\fcc_tm.sqlite --k 4 --out-png data\importance_k4_grouped.png --cv 5
+~~~
 
 ## Features
 
@@ -74,7 +94,7 @@ Optional CSV exports (features/segments)
 
 ## How to run (conda, one-liners)
 
-```bat
+~~~bat
 # from repo root
 conda create -n tmcseg python=3.11 -y
 conda activate tmcseg
@@ -89,4 +109,4 @@ python -m tm_custseg pca-2d --db data\fcc_tm.sqlite --k 4 --out-csv data\pca2d_k
 python -m tm_custseg report --db data\fcc_tm.sqlite --k 4 --out-html data\seg_report_k4.html --pca-csv data\pca2d_k4.csv
 python -m tm_custseg explain --db data\fcc_tm.sqlite --k 4 --out-csv data\importance_k4_cv5.csv --mode pi_cv --cv 5
 python -m tm_custseg viz-importance --db data\fcc_tm.sqlite --k 4 --out-png data\importance_k4_grouped.png --cv 5
-```
+~~~
