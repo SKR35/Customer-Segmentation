@@ -1,0 +1,27 @@
+# Python cache / build
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual envs
+.venv/
+venv/
+ENV/
+
+# Tools
+.pytest_cache/
+.mypy_cache/
+.coverage*
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+data/**
+!data/.gitkeep
+Archive/**
