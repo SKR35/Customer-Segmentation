@@ -11,8 +11,8 @@ It computes per-customer behavioral features and clusters customers with **KMean
 conda create -n tmcseg python=3.11 -y
 conda activate tmcseg
 python --version
-
 pip install -e .
+
 
 ---
 
